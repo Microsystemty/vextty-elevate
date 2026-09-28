@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CasesRouteImport } from './routes/cases'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as SegmentosRouteImport } from './routes/segmentos'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
+import { Route as VexttyRouteImport } from './routes/vextty'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasesRoute = CasesRouteImport.update({
+  id: '/cases',
+  path: '/cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SegmentosRoute = SegmentosRouteImport.update({
+  id: '/segmentos',
+  path: '/segmentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VexttyRoute = VexttyRouteImport.update({
+  id: '/vextty',
+  path: '/vextty',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cases': typeof CasesRoute
+  '/contato': typeof ContatoRoute
+  '/segmentos': typeof SegmentosRoute
+  '/solucoes': typeof SolucoesRoute
+  '/vextty': typeof VexttyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cases': typeof CasesRoute
+  '/contato': typeof ContatoRoute
+  '/segmentos': typeof SegmentosRoute
+  '/solucoes': typeof SolucoesRoute
+  '/vextty': typeof VexttyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cases': typeof CasesRoute
+  '/contato': typeof ContatoRoute
+  '/segmentos': typeof SegmentosRoute
+  '/solucoes': typeof SolucoesRoute
+  '/vextty': typeof VexttyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/cases' | '/contato' | '/segmentos' | '/solucoes' | '/vextty'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cases' | '/contato' | '/segmentos' | '/solucoes' | '/vextty'
+  id:
+    | '__root__'
+    | '/'
+    | '/cases'
+    | '/contato'
+    | '/segmentos'
+    | '/solucoes'
+    | '/vextty'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CasesRoute: typeof CasesRoute
+  ContatoRoute: typeof ContatoRoute
+  SegmentosRoute: typeof SegmentosRoute
+  SolucoesRoute: typeof SolucoesRoute
+  VexttyRoute: typeof VexttyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cases': {
+      id: '/cases'
+      path: '/cases'
+      fullPath: '/cases'
+      preLoaderRoute: typeof CasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/segmentos': {
+      id: '/segmentos'
+      path: '/segmentos'
+      fullPath: '/segmentos'
+      preLoaderRoute: typeof SegmentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vextty': {
+      id: '/vextty'
+      path: '/vextty'
+      fullPath: '/vextty'
+      preLoaderRoute: typeof VexttyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CasesRoute: CasesRoute,
+  ContatoRoute: ContatoRoute,
+  SegmentosRoute: SegmentosRoute,
+  SolucoesRoute: SolucoesRoute,
+  VexttyRoute: VexttyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

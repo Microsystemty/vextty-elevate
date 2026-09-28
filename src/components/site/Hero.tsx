@@ -24,8 +24,8 @@ export function Hero() {
               Desenvolvemos sistemas, sites e aplicações personalizadas para empresas que querem evoluir, simplificar processos e alcançar melhores resultados.
             </p>
             <div className="reveal mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#solucoes" className="btn-primary group">Conheça nossas soluções <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
-              <a href="#contato" className="btn-ghost">Falar com um especialista</a>
+              <a href="/solucoes" className="btn-primary group">Conheça nossas soluções <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
+              <a href="/contato" className="btn-ghost">Falar com um especialista</a>
             </div>
             <div className="reveal mt-10 grid gap-4 border-t border-white/10 pt-6 sm:grid-cols-2 xl:grid-cols-4">
               {highlights.map(([Icon, item]) => <div key={item} className="flex items-center gap-2.5 text-[12px] leading-4 text-slate-300"><Icon className="h-5 w-5 shrink-0 text-primary-glow" />{item}</div>)}
@@ -48,7 +48,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <a href="#solucoes" aria-label="Rolar para as soluções" className="absolute bottom-3 left-1/2 z-30 -translate-x-1/2 text-slate-500 transition-colors hover:text-white"><ChevronDown className="h-6 w-6 animate-bounce" /></a>
+      <a href="/solucoes" aria-label="Conhecer soluções" className="absolute bottom-3 left-1/2 z-30 -translate-x-1/2 text-slate-500 transition-colors hover:text-white"><ChevronDown className="h-6 w-6 animate-bounce" /></a>
     </section>
   );
 }
