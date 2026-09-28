@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart3, Check, ChevronDown, Headphones, RefreshCw, Server, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Headphones, RefreshCw, Server, ShieldCheck } from "lucide-react";
 
 const highlights = [
   [Server, "Sistemas personalizados"],
@@ -37,10 +37,6 @@ export function Hero() {
             <div className="hero-v absolute left-[12%] top-[4%] font-display text-[300px] font-black leading-none tracking-[-.16em] text-white/[.035]">V</div>
             <div className="absolute inset-x-0 bottom-[-7%] z-20 flex justify-center">
               <img src="/vex-mascot.png" alt="Vex, mascote robô da Vextty" className="vex-hero h-auto max-h-[560px] w-auto max-w-[100%] object-contain" />
-            </div>
-            <div className="glass-note absolute right-[6%] top-[18%] z-30 w-44 rounded-2xl p-4 sm:w-48">
-              <p className="text-base font-semibold text-white">Ideias</p><p className="mt-1 text-base font-semibold text-white">Sistemas</p><p className="mt-1 text-base font-semibold text-primary-glow">Resultados</p>
-              <BarChart3 className="absolute right-3 top-4 h-6 w-6 text-primary-glow" />
             </div>
             <div className="vex-badge absolute bottom-[13%] left-[5%] z-30 rounded-2xl border border-white/10 bg-[#061429]/80 p-3 backdrop-blur-xl">
               <p className="text-[10px] text-slate-400">Olá! Eu sou o</p><p className="font-display text-lg font-bold text-white">Vex <span className="text-primary-glow">●</span></p>
