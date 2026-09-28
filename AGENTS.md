@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+Home VEXTTY: seções são componentes reutilizáveis em src/components/site/, compostos em src/routes/index.tsx (one-page com navegação por âncoras). Tokens de design em src/styles.css; nunca usar cores hardcoded em componentes.
