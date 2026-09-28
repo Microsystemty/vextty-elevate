@@ -1,80 +1,54 @@
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, BarChart3, Check, ChevronDown, Headphones, RefreshCw, Server, ShieldCheck } from "lucide-react";
 
 const highlights = [
-  "Sistemas sob medida",
-  "Plataformas SaaS",
-  "Sites de alta performance",
-  "Automação & integrações",
-];
+  [Server, "Sistemas personalizados"],
+  [RefreshCw, "Implantação rápida"],
+  [Headphones, "Suporte especializado"],
+  [ShieldCheck, "Segurança e confiabilidade"],
+] as const;
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden pb-24 pt-36 sm:pb-32 sm:pt-44">
-      {/* Fundo: grade + glows elétricos */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            maskImage:
-              "radial-gradient(ellipse 75% 65% at 50% 0%, black, transparent 72%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 75% 65% at 50% 0%, black, transparent 72%)",
-          }}
-        />
-        <div className="animate-glow absolute left-1/2 top-[-220px] h-[480px] w-[760px] -translate-x-1/2 rounded-full bg-primary/25 blur-[140px]" />
-        <div className="animate-float absolute right-[8%] top-[260px] h-[280px] w-[280px] rounded-full bg-primary-glow/15 blur-[120px]" />
-        <div className="absolute left-[6%] top-[120px] h-[220px] w-[220px] rounded-full bg-primary/10 blur-[100px]" />
-      </div>
+    <section id="inicio" className="hero relative flex min-h-[780px] items-center overflow-hidden pb-12 pt-28">
+      <div aria-hidden className="hero-grid pointer-events-none absolute inset-0" />
+      <div aria-hidden className="hero-rays pointer-events-none absolute inset-0" />
+      <div aria-hidden className="orb orb-one" />
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="hero-stage grid min-h-[585px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#030d1b]/70 shadow-2xl shadow-black/60 lg:grid-cols-[1.06fr_.94fr]">
+          <div className="relative z-20 flex flex-col justify-center px-7 py-14 sm:px-12 lg:px-14">
+            <p className="reveal reveal-visible text-[11px] font-semibold uppercase tracking-[.24em] text-primary-glow">Tecnologia para o seu crescimento</p>
+            <h1 className="reveal mt-4 max-w-[660px] font-display text-[clamp(3rem,4.2vw,3.8rem)] font-bold leading-[.96] tracking-[-.05em]">
+              Soluções completas para <span className="text-gradient">diferentes segmentos.</span>
+            </h1>
+            <p className="reveal mt-6 max-w-xl text-base leading-7 text-slate-300">
+              Desenvolvemos sistemas, sites e aplicações personalizadas para empresas que querem evoluir, simplificar processos e alcançar melhores resultados.
+            </p>
+            <div className="reveal mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#solucoes" className="btn-primary group">Conheça nossas soluções <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
+              <a href="#contato" className="btn-ghost">Falar com um especialista</a>
+            </div>
+            <div className="reveal mt-10 grid gap-4 border-t border-white/10 pt-6 sm:grid-cols-2 xl:grid-cols-4">
+              {highlights.map(([Icon, item]) => <div key={item} className="flex items-center gap-2.5 text-[12px] leading-4 text-slate-300"><Icon className="h-5 w-5 shrink-0 text-primary-glow" />{item}</div>)}
+            </div>
+          </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-6">
-        <div className="reveal reveal-visible">
-          <span className="eyebrow">Sistemas · SaaS · Sites · Soluções digitais</span>
-        </div>
-
-        <h1 className="reveal mx-auto mt-6 max-w-4xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-6xl sm:leading-[1.08]">
-          Tecnologia que <span className="text-gradient">transforma ideias</span> em
-          resultados.
-        </h1>
-
-        <p className="reveal mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          A VEXTTY desenvolve sistemas, plataformas SaaS, sites e soluções digitais
-          sob medida para empresas de diversos segmentos — do conceito à entrega.
-        </p>
-
-        <div className="reveal mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="#contato" className="btn-primary group w-full sm:w-auto">
-            Solicitar uma proposta
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a href="#solucoes" className="btn-ghost w-full sm:w-auto">
-            Conhecer soluções
-          </a>
-        </div>
-
-        <div className="reveal mt-14 flex flex-wrap items-center justify-center gap-3">
-          {highlights.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-border bg-card/60 px-4 py-2 text-xs font-medium text-muted-foreground sm:text-sm"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-16 flex justify-center">
-          <a
-            href="#solucoes"
-            aria-label="Rolar para soluções"
-            className="animate-float grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
-          >
-            <ChevronDown className="h-5 w-5" />
-          </a>
+          <div className="hero-visual reveal relative min-h-[500px] overflow-hidden lg:min-h-0" style={{ transitionDelay: "120ms" }}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_40%,rgba(0,139,255,.32),transparent_44%)]" />
+            <div className="hero-v absolute left-[12%] top-[4%] font-display text-[300px] font-black leading-none tracking-[-.16em] text-white/[.035]">V</div>
+            <div className="absolute inset-x-0 bottom-[-7%] z-20 flex justify-center">
+              <img src="/vex-mascot.png" alt="Vex, mascote robô da Vextty" className="vex-hero h-auto max-h-[560px] w-auto max-w-[100%] object-contain" />
+            </div>
+            <div className="glass-note absolute right-[6%] top-[18%] z-30 w-44 rounded-2xl p-4 sm:w-48">
+              <p className="text-base font-semibold text-white">Ideias</p><p className="mt-1 text-base font-semibold text-white">Sistemas</p><p className="mt-1 text-base font-semibold text-primary-glow">Resultados</p>
+              <BarChart3 className="absolute right-3 top-4 h-6 w-6 text-primary-glow" />
+            </div>
+            <div className="vex-badge absolute bottom-[13%] left-[5%] z-30 rounded-2xl border border-white/10 bg-[#061429]/80 p-3 backdrop-blur-xl">
+              <p className="text-[10px] text-slate-400">Olá! Eu sou o</p><p className="font-display text-lg font-bold text-white">Vex <span className="text-primary-glow">●</span></p>
+            </div>
+          </div>
         </div>
       </div>
+      <a href="#solucoes" aria-label="Rolar para as soluções" className="absolute bottom-3 left-1/2 z-30 -translate-x-1/2 text-slate-500 transition-colors hover:text-white"><ChevronDown className="h-6 w-6 animate-bounce" /></a>
     </section>
   );
 }
