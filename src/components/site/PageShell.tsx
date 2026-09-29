@@ -31,7 +31,7 @@ export function PageHero({eyebrow,title,accent,description,visual="/professional
           <div className="subpage-screen-card subpage-screen-card-a"><span>Processos</span><strong>+ eficiência</strong></div>
           <div className="subpage-screen-card subpage-screen-card-b"><span>Soluções</span><strong>sob medida</strong></div>
           <div className="subpage-human-halo" aria-hidden />
-          <img src={visual} alt="Profissional usando um computador" className={`subpage-human-image${isPortraitVisual ? " subpage-human-image--portrait" : ""}`} />
+          <img src={visual} alt="Profissional usando um computador" loading="eager" decoding="async" className={`subpage-human-image${isPortraitVisual ? " subpage-human-image--portrait" : ""}`} />
         </div>
       </div>
       <div className="subpage-hero-bottom" aria-hidden><span /><span /><span /></div>

@@ -12,7 +12,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
       height={768}
       className={cn(
         "h-auto object-contain object-left drop-shadow-[0_0_18px_rgba(0,166,255,.24)]",
-        compact ? "w-32 sm:w-36" : "w-40 sm:w-48",
+        compact ? "w-[7.5rem] sm:w-36" : "w-36 sm:w-48",
       )}
     />
   );
