@@ -36,7 +36,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_40%,rgba(0,139,255,.32),transparent_44%)]" />
             <div className="hero-v absolute left-[12%] top-[4%] font-display text-[300px] font-black leading-none tracking-[-.16em] text-white/[.035]">V</div>
             <div className="absolute inset-x-0 bottom-[-7%] z-20 flex justify-center">
-              <img src="/vex-mascot.png" alt="Vex, mascote robô da Vextty" className="vex-hero h-auto max-h-[560px] w-auto max-w-[100%] object-contain" />
+              <img src="/vex-mascot.png" alt="Vex, mascote robô da Vextty" width="1149" height="1369" fetchPriority="high" decoding="async" className="vex-hero h-auto max-h-[560px] w-auto max-w-[100%] object-contain" />
             </div>
             <div className="glass-note absolute right-[6%] top-[18%] z-30 w-44 rounded-2xl p-4 sm:w-48">
               <p className="text-base font-semibold text-white">Ideias</p><p className="mt-1 text-base font-semibold text-white">Sistemas</p><p className="mt-1 text-base font-semibold text-primary-glow">Resultados</p>
