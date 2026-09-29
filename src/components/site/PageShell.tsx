@@ -8,6 +8,8 @@ import { useReveal } from "@/hooks/use-reveal";
 export function PageShell({children}:{children:ReactNode}){useReveal();return <div className="min-h-screen bg-background text-foreground"><Navbar/><main>{children}</main><Footer/><FloatingWhatsApp/></div>}
 
 export function PageHero({eyebrow,title,accent,description,visual="/professional-computer.png"}:{eyebrow:string;title:string;accent:string;description:string;visual?:string}) {
+  const isPortraitVisual = visual !== "/professional-computer.png";
+
   return (
     <section className="subpage-hero subpage-hero-premium">
       <div className="hero-grid pointer-events-none absolute inset-0" />
@@ -29,7 +31,7 @@ export function PageHero({eyebrow,title,accent,description,visual="/professional
           <div className="subpage-screen-card subpage-screen-card-a"><span>Processos</span><strong>+ eficiência</strong></div>
           <div className="subpage-screen-card subpage-screen-card-b"><span>Soluções</span><strong>sob medida</strong></div>
           <div className="subpage-human-halo" aria-hidden />
-          <img src={visual} alt="Profissional usando um computador" className="subpage-human-image" />
+          <img src={visual} alt="Profissional usando um computador" className={`subpage-human-image${isPortraitVisual ? " subpage-human-image--portrait" : ""}`} />
         </div>
       </div>
       <div className="subpage-hero-bottom" aria-hidden><span /><span /><span /></div>
