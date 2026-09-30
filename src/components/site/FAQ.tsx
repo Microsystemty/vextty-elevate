@@ -1,71 +1,34 @@
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const questions = [
-  [
-    "Que tipos de soluções a Vextty desenvolve?",
-    "Desenvolvemos sistemas personalizados, sites, portais, aplicações web, automações e integrações pensadas para os processos e objetivos de cada empresa.",
-  ],
-  [
-    "A solução funciona em celular, tablet e computador?",
-    "Sim. Todos os projetos são desenvolvidos com experiência responsiva, adaptando conteúdo, navegação e recursos a diferentes tamanhos de tela.",
-  ],
-  [
-    "Quanto tempo leva para desenvolver um projeto?",
-    "O prazo depende do escopo e da complexidade. Após a conversa inicial, organizamos as etapas e apresentamos uma estimativa clara de desenvolvimento e implantação.",
-  ],
-  [
-    "A Vextty oferece suporte após a entrega?",
-    "Sim. Podemos acompanhar a implantação, realizar melhorias e oferecer suporte contínuo para manter a solução segura, atualizada e preparada para crescer.",
-  ],
-  [
-    "É possível integrar com sistemas que minha empresa já utiliza?",
-    "Sim. Avaliamos as APIs e os recursos disponíveis para integrar ferramentas, centralizar informações e reduzir tarefas manuais.",
-  ],
-  [
-    "Como solicito uma proposta?",
-    "Entre em contato pelo formulário ou pelo WhatsApp. Vamos entender sua necessidade e indicar o caminho mais adequado, sem compromisso.",
-  ],
-] as const;
+  ["O que a Vextty desenvolve?", "Desenvolvemos sistemas, sites, aplicações, automações e integrações sob medida para apoiar processos, melhorar experiências e ajudar empresas a crescer."],
+  ["A Vextty atende empresas de qualquer segmento?", "Sim. Conhecemos a operação de cada negócio antes de propor uma solução. Assim, a tecnologia é planejada de acordo com seus processos, desafios e objetivos."],
+  ["Como funciona o início de um projeto?", "Tudo começa com uma conversa para entender sua necessidade. Depois organizamos as prioridades, definimos o escopo e apresentamos o caminho mais adequado para a sua solução."],
+  ["É possível criar um sistema totalmente personalizado?", "Sim. Quando uma ferramenta pronta não atende sua realidade, construímos uma solução sob medida, com as funcionalidades que realmente fazem sentido para sua empresa."],
+  ["A Vextty acompanha o projeto depois da entrega?", "Sim. A implantação é apenas uma etapa. Podemos acompanhar a evolução da solução, realizar melhorias e apoiar a empresa conforme novas necessidades surgirem."],
+  ["Como posso solicitar um orçamento?", "Você pode falar conosco pelo formulário de contato ou pelo WhatsApp. Conte brevemente seu desafio e prepararemos uma conversa mais direcionada."],
+];
 
 export function FAQ() {
   return (
-    <section className="light-section px-5 py-20 sm:px-8 sm:py-28" aria-labelledby="faq-title">
-      <div className="mx-auto max-w-5xl">
-        <div className="reveal text-center">
+    <section className="light-section py-20 sm:py-28" aria-labelledby="faq-title">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[.78fr_1.22fr] lg:gap-20 lg:px-10">
+        <div className="reveal lg:sticky lg:top-28 lg:self-start">
           <span className="eyebrow">Perguntas frequentes</span>
-          <h2 id="faq-title" className="section-title mx-auto mt-5 max-w-3xl text-slate-950">
-            Tudo o que você precisa saber <span className="text-gradient">antes de começar.</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-600">
-            Respostas rápidas sobre projetos, implantação, integrações e suporte da Vextty.
-          </p>
+          <h2 id="faq-title" className="section-title mt-5 text-slate-950">Tudo o que você precisa saber sobre a <span className="text-gradient">Vextty.</span></h2>
+          <p className="mt-6 max-w-md leading-7 text-slate-600">Ainda ficou com alguma dúvida? Nossa equipe está pronta para entender o seu momento e orientar o próximo passo.</p>
+          <a href="/contato" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-cyan-600"><MessageCircle className="h-4 w-4" /> Falar com a Vextty</a>
         </div>
-
-        <div className="mt-10 grid gap-3">
-          {questions.map(([question, answer]) => (
-            <details key={question} className="faq-item reveal group">
-              <summary>
-                <span>{question}</span>
-                <ChevronDown className="h-5 w-5 shrink-0" aria-hidden />
-              </summary>
-              <p>{answer}</p>
-            </details>
-          ))}
-        </div>
-
-        <div className="reveal mt-9 flex flex-col items-center justify-between gap-5 rounded-2xl bg-slate-950 p-6 text-center text-white sm:flex-row sm:text-left">
-          <div>
-            <h3 className="font-display text-xl font-semibold">Ainda tem alguma dúvida?</h3>
-            <p className="mt-1 text-sm text-slate-400">Converse diretamente com a equipe da Vextty.</p>
-          </div>
-          <a
-            href="https://wa.me/5511910668305?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vextty%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20as%20solu%C3%A7%C3%B5es."
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary w-full sm:w-auto"
-          >
-            <MessageCircle className="h-5 w-5" /> Falar pelo WhatsApp
-          </a>
+        <div className="reveal rounded-[1.5rem] border border-slate-200 bg-white px-6 shadow-[0_20px_55px_rgba(15,58,110,.08)] sm:px-8">
+          <Accordion type="single" collapsible className="w-full">
+            {questions.map(([question, answer], index) => (
+              <AccordionItem key={question} value={`question-${index}`} className="border-slate-200">
+                <AccordionTrigger className="py-6 text-left font-display text-base font-semibold text-slate-900 hover:no-underline sm:text-lg">{question}</AccordionTrigger>
+                <AccordionContent className="pb-6 pr-8 text-sm leading-7 text-slate-600 sm:text-[15px]">{answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
